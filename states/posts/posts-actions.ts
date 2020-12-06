@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { postsTypes } from './postsActionTypes'
+import { postsTypes } from './posts-action-types'
 
 export const getRecentPosts = () => async (dispatch: any) => {
   try {

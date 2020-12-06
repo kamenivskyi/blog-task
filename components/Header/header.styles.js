@@ -4,11 +4,6 @@ export const NavbarWrapper = styled.header`
   background-color: #222;
 `;
 
-export const Container = styled.div`
-  width: 90%;
-  margin: 0 auto;
-`;
-
 export const Nav = styled.nav`
   display: flex;
   align-items: center;

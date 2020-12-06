@@ -1,28 +1,19 @@
-import React from 'react'
-import styled from 'styled-components';
+import React from 'react';
 
 import { IListItem } from 'interfaces';
-import { ListStyled } from './List.styled';
+import { ListStyled } from './list.styles';
+import ListItem from 'components/list-item';
 
 interface IList {
   items: IListItem[],
-}
+};
 
-const ListItemStyled = styled.li`
-  padding: 10px 20px;
-  border-bottom: 1px solid #ccc;
-`;
-
-const List = ({ items }: IList) => {
-  return (
-    <ListStyled>
-      {items?.map(item => (
-        <ListItemStyled>
-          {item.title}
-        </ListItemStyled>
-      ))}
-    </ListStyled>
-  )
-}
+const List = ({ items }: IList) => (
+  <ListStyled>
+    {items?.map(item => (
+      <ListItem {...item} key={item.id} />
+    ))}
+  </ListStyled>
+);
 
 export default List;

@@ -1,18 +1,19 @@
 import Link from 'next/link';
 
-import { NavbarWrapper, Container, NavItem, Nav } from './Header.styled';
+import { NavbarWrapper, NavItem, Nav } from './header.styles';
+import { Container } from 'styles/styled-globals';
 
 const Header = () => {
   return (
     <NavbarWrapper>
       <Container>
         <Nav>
-          <Link prefetch href='/' passHref>
+          <Link href='/' passHref>
             <NavItem>
               Home
             </NavItem>
           </Link>
-          <Link prefetch href='/new' passHref>
+          <Link href='/new' passHref>
             <NavItem>
               New post
             </NavItem>

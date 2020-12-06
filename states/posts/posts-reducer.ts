@@ -1,5 +1,5 @@
-import { postsTypes } from './postsActionTypes'
-import { IPostsState } from './postsInterfaces'
+import { postsTypes } from './posts-action-types'
+import { IPostsState } from './posts-interfaces'
 
 const initialState: IPostsState = {
   posts: [],

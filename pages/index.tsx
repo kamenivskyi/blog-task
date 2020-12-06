@@ -1,13 +1,15 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import List from 'components/List';
-import Layout from 'components/Layout';
-import ShowReduxState from 'components/ShowReduxState';
-import { getRecentPosts } from 'states/posts/postsActions';
+import List from 'components/list';
+import Layout from 'components/layout';
+import { getRecentPosts } from 'states/posts/posts-actions';
+import { Container } from 'styles/styled-globals';
 
 const Home = () => {
   const dispatch = useDispatch();
+
+  const { posts } = useSelector(({ posts }) => posts);
 
   useEffect(() => {
     dispatch(getRecentPosts());
@@ -15,8 +17,9 @@ const Home = () => {
 
   return (
     <Layout>
-      <List />
-      <ShowReduxState />
+      <Container>
+        <List items={posts} />
+      </Container>
     </Layout>
   );
 };
