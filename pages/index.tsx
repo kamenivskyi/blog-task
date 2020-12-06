@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import List from 'components/List'
+import List from 'components/list'
 import Layout from 'components/layout'
 import Loader from 'components/loader'
 import { getRecentPosts } from 'states/posts/posts-actions'

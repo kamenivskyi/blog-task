@@ -4,9 +4,9 @@ import { Action } from 'redux'
 import { ThunkAction } from 'redux-thunk'
 
 export interface IPostItem {
-  title: string
-  body: string
-  id: number
+  title?: string
+  body?: string
+  id?: number
 }
 export interface IPostsState {
   posts: IPostItem[]

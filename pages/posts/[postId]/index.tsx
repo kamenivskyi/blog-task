@@ -9,7 +9,7 @@ import { PageTitle } from 'styles/styled-globals'
 import { postPageErrorMessage } from 'utils/config'
 
 const PostPage = () => {
-  const { postById, postByIdError, postByIdLoading } = useSelector(({ posts }) => posts)
+  const { postById, postByIdError, postByIdLoading } = useSelector(({ posts }: any) => posts)
   const dispatch = useDispatch()
   const { postId } = useRouter().query
 
