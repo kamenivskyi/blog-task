@@ -1,19 +1,17 @@
 import Head from 'next/head'
 
-interface Props {
+interface ILayout {
   children: any
 }
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ children }: ILayout) => {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Blog task</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
 
       <footer>footer</footer>
     </div>

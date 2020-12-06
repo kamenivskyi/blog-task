@@ -1,5 +1,10 @@
+import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
-import Layout from 'components/Layout/Layout';
+
+import Layout from 'components/Layout';
+import ShowReduxState from 'components/ShowReduxState';
+import { useEffect } from 'react';
+import { getRecentPosts } from 'states/posts/postsActions';
 
 const Button = styled.button`
   color: #222;
@@ -9,12 +14,17 @@ const Button = styled.button`
 `;
 
 const Home = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getRecentPosts());
+  }, []);
+
   return (
     <Layout>
-      <Button>
-        Button
-      </Button>
+      <Button>Button</Button>
+      <ShowReduxState />
     </Layout>
-  )
-}
-export default Home
+  );
+};
+export default Home;
