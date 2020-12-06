@@ -17,12 +17,14 @@ const postsReducer = (state = initialState, action: any) => {
         ...state,
         posts: action.payload,
         postsLoading: false,
+        postsError: false,
       };
     case types.GET_POST_BY_ID:
       return {
         ...state,
         postById: action.payload,
         postByIdLoading: false,
+        postByIdError: false,
       };
     case types.RECENT_POSTS_ERROR:
       return {
