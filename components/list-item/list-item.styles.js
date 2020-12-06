@@ -27,12 +27,3 @@ export const TitleStyled = styled.h4`
   padding: 10px;
   margin-bottom: 20px;
 `;
-
-export const Button = styled.button`
-  font-size: 16px;
-  display: block;
-  padding: 10px 20px;
-  color: white;
-  background-color: cornflowerblue;
-  border: none;
-`;

@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { ListItemStyled, TitleStyled, BodyStyled, Button } from './list-item.styles';
+import { ListItemStyled, TitleStyled, BodyStyled } from './list-item.styles';
+import { Button } from 'styles/styled-globals';
 import { IListItem } from 'interfaces';
 
 const ListItem = ({ title, body, id }: IListItem) => {

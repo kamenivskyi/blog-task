@@ -1,11 +1,11 @@
-import axios from 'axios'
+import axios from 'axios-instance'
 import { postsTypes } from './posts-action-types'
 
 export const getRecentPosts = () => async (dispatch: any) => {
   try {
     dispatch(setLoadingPosts());
 
-    const res = await axios.get('https://simple-blog-api.crew.red/posts');
+    const res = await axios.get('/posts');
 
     dispatch({ type: postsTypes.GET_RECENT_POSTS, payload: res.data })
   } catch (error) {
@@ -17,7 +17,7 @@ export const getPostById = (id: number) => async (dispatch: any) => {
   try {
     dispatch(setLoadingPostById());
 
-    const res = await axios.get(`https://simple-blog-api.crew.red/posts${id}`)
+    const res = await axios.get(`/posts${id}`)
     
     dispatch({ type: postsTypes.GET_POST_BY_ID, payload: res.data })
   } catch (error) {
