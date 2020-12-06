@@ -7,6 +7,8 @@ export interface IPostItem  {
 export interface IPostsState  {
   posts: IPostItem[]
   postById: object
+  postsLoading: boolean
+  postByIdLoading: boolean
   postsError: boolean
   postByIdError: boolean
 }

@@ -3,13 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import List from 'components/list';
 import Layout from 'components/layout';
+import Loader from 'components/loader';
 import { getRecentPosts } from 'states/posts/posts-actions';
 import { Container } from 'styles/styled-globals';
 
 const Home = () => {
   const dispatch = useDispatch();
 
-  const { posts } = useSelector(({ posts }) => posts);
+  const { posts, postsLoading } = useSelector(({ posts }) => posts);
 
   useEffect(() => {
     dispatch(getRecentPosts());
@@ -18,7 +19,8 @@ const Home = () => {
   return (
     <Layout>
       <Container>
-        <List items={posts} />
+        {postsLoading && <Loader />}
+        {posts && <List items={posts} />}  
       </Container>
     </Layout>
   );
