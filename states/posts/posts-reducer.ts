@@ -1,5 +1,5 @@
-import { postsTypes } from './posts-action-types'
-import { IPostsState } from './posts-interfaces'
+import { postsTypes as types } from './posts-action-types';
+import { IPostsState } from './posts-interfaces';
 
 const initialState: IPostsState = {
   posts: [],
@@ -8,45 +8,47 @@ const initialState: IPostsState = {
   postByIdLoading: false,
   postsError: false,
   postByIdError: false,
-}
+};
 
-export default (state = initialState, action: any) => {
+const postsReducer = (state = initialState, action: any) => {
   switch (action.type) {
-    case postsTypes.GET_RECENT_POSTS:
+    case types.GET_RECENT_POSTS:
       return {
         ...state,
         posts: action.payload,
         postsLoading: false,
-      }
-    case postsTypes.GET_POST_BY_ID:
+      };
+    case types.GET_POST_BY_ID:
       return {
         ...state,
         postById: action.payload,
         postByIdLoading: false,
-      }
-    case postsTypes.RECENT_POSTS_ERROR:
+      };
+    case types.RECENT_POSTS_ERROR:
       return {
         ...state,
         postsError: true,
         postsLoading: false,
-      }
-    case postsTypes.POST_BY_ID_ERROR:
+      };
+    case types.POST_BY_ID_ERROR:
       return {
         ...state,
         postByIdError: true,
         postByIdLoading: false,
-      }
-    case postsTypes.SET_LOADING_POSTS:
+      };
+    case types.SET_LOADING_POSTS:
       return {
         ...state,
         postsLoading: true,
-      }
-    case postsTypes.SET_LOADING_POST_BY_ID:
+      };
+    case types.SET_LOADING_POST_BY_ID:
       return {
         ...state,
         postByIdLoading: true,
-      }
+      };
     default:
-      return state
+      return state;
   }
-}
+};
+
+export default postsReducer;

@@ -6,21 +6,19 @@ interface ILayout {
   children: any
 }
 
-const Layout = ({ children }: ILayout) => {
-  return (
-    <>
-      <Head>
-        <title>Blog task</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Header />
-      <main>
-        <Container>
-          {children}
-        </Container>
-      </main>
-    </>
-  )
-}
+const Layout: React.FC<ILayout> = ({ children }) => (
+  <>
+    <Head>
+      <title>Blog task</title>
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+    <Header />
+    <main>
+      <Container>
+        {children}
+      </Container>
+    </main>
+  </>
+);
 
 export default Layout

@@ -7,7 +7,7 @@ import postsReducer from './posts/posts-reducer';
 
 let store;
 
-function initStore(initialState) {
+export default function initStore(initialState) {
   return createStore(
     combineReducers({
       posts: postsReducer,

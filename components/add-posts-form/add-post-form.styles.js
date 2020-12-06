@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
-export const InputStyled = styled.input`
-  padding: 10px 20px;
-  font-size: 17px;
-  border-radius: 3px;
-  margin-right: 20px;
-  border: 1px solid #ccc;
+export const AddPostFormStyled = styled.form`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;

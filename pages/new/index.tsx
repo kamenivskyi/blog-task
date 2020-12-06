@@ -1,11 +1,10 @@
-import React from 'react';
-
 import Layout from 'components/layout';
 import AddPostForm from 'components/add-posts-form';
+import { PageTitle } from 'styles/styled-globals';
 
-const NewPost = () => (
+const NewPost: React.FC = () => (
   <Layout>
-    <h2>Add new post page</h2>
+    <PageTitle>Add new post page</PageTitle>
     <AddPostForm />
   </Layout>
 );

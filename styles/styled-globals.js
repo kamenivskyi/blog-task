@@ -6,6 +6,18 @@ export const Container = styled.div`
   margin: 0 auto;
 `;
 
+export const InputStyled = styled.input`
+  padding: 10px 20px;
+  font-size: 17px;
+  border-radius: 3px;
+  margin-right: 20px;
+  border: 1px solid #ccc;
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+`;
+
 export const Button = styled.button`
   font-size: 16px;
   display: block;
@@ -13,4 +25,13 @@ export const Button = styled.button`
   color: white;
   background-color: cornflowerblue;
   border: none;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
+export const PageTitle = styled.h1`
+  text-align: center;
+  margin-bottom: 20px;
 `;

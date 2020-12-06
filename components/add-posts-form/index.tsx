@@ -1,15 +1,15 @@
 import { useState } from 'react';
 
 import axios from 'axios-instance';
-import { InputStyled } from './add-post-form.styles';
-import { Button } from 'styles/styled-globals';
+import { AddPostFormStyled } from './add-post-form.styles';
+import { Button, InputStyled } from 'styles/styled-globals';
 
 interface IAddPostFormState {
   title: string
   body: string
 };
 
-const AddPostForm = () => {
+const AddPostForm: React.FC = () => {
   const [state, setState] = useState<IAddPostFormState>({ title: '', body: '' });
 
   const handleChange = (field: string) => 
@@ -44,13 +44,21 @@ const AddPostForm = () => {
 
 
   return (
-    <form onSubmit={onClickAddNewPost}>
-      <InputStyled type="text" onChange={handleChange('title')} placeholder='Title' />
-      <InputStyled type='text' onChange={handleChange('body')} placeholder='Body' />
+    <AddPostFormStyled onSubmit={onClickAddNewPost}>
+      <InputStyled 
+        type="text" 
+        placeholder='Title' 
+        onChange={handleChange('title')} 
+      />
+      <InputStyled 
+        type='text' 
+        placeholder='Body' 
+        onChange={handleChange('body')} 
+      />
       <Button>
         add new post
       </Button>
-    </form>
+    </AddPostFormStyled>
   );
 };
 

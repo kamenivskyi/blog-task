@@ -6,10 +6,15 @@ import Layout from 'components/layout';
 import Loader from 'components/loader';
 import { getRecentPosts } from 'states/posts/posts-actions';
 
-const Home = () => {
-  const dispatch = useDispatch();
+interface IRootState {
+  posts: any,
+};
 
-  const { posts, postsLoading } = useSelector(({ posts }) => posts);
+const Home: React.FC = () => {
+  const dispatch = useDispatch();
+  
+  const selectPosts = (state: IRootState) => state.posts;
+  const { posts, postsLoading } = useSelector(selectPosts);
 
   useEffect(() => {
     dispatch(getRecentPosts());
