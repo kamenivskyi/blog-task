@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const ListItemStyled = styled.li`
   display: flex;
@@ -11,19 +11,19 @@ export const ListItemStyled = styled.li`
   margin-bottom: 20px;
 
   @media (max-width: 768px) {
-    width: 48%; 
+    width: 48%;
   }
 
   @media (max-width: 450px) {
     width: 100%;
   }
-`;
+`
 
 export const TitleStyled = styled.h4`
   text-align: center;
-`;
-  
-  export const BodyStyled = styled.div`
+`
+
+export const BodyStyled = styled.div`
   padding: 10px;
   margin-bottom: 20px;
-`;
+`

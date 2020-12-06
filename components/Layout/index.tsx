@@ -14,11 +14,9 @@ const Layout: React.FC<ILayout> = ({ children }) => (
     </Head>
     <Header />
     <main>
-      <Container>
-        {children}
-      </Container>
+      <Container>{children}</Container>
     </main>
   </>
-);
+)
 
 export default Layout

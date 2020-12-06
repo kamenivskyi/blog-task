@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const AddPostFormStyled = styled.form`
   display: flex;
@@ -8,4 +8,4 @@ export const AddPostFormStyled = styled.form`
   @media (max-width: 768px) {
     flex-direction: column;
   }
-`;
+`

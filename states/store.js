@@ -1,21 +1,21 @@
-import { useMemo } from 'react';
-import { createStore, applyMiddleware, combineReducers } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
-import thunk from 'redux-thunk';
+import { useMemo } from 'react'
+import { createStore, applyMiddleware, combineReducers } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly'
+import thunk from 'redux-thunk'
 
-import postsReducer from './posts/posts-reducer';
+import postsReducer from './posts/posts-reducer'
 
-let store;
+let store
 
-export default function initStore(initialState) {
+export function initStore(initialState) {
   return createStore(
     combineReducers({
       posts: postsReducer,
     }),
     initialState,
     composeWithDevTools(applyMiddleware(thunk))
-  );
-};
+  )
+}
 
 export const initializeStore = (preloadedState) => {
   let _store = store ?? initStore(preloadedState)
@@ -37,9 +37,9 @@ export const initializeStore = (preloadedState) => {
   if (!store) store = _store
 
   return _store
-};
+}
 
 export function useStore(initialState) {
-  const store = useMemo(() => initializeStore(initialState), [initialState]);
-  return store;
-};
+  const store = useMemo(() => initializeStore(initialState), [initialState])
+  return store
+}

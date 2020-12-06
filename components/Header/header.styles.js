@@ -1,13 +1,13 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const NavbarWrapper = styled.header`
   background-color: #222;
-`;
+`
 
 export const Nav = styled.nav`
   display: flex;
   align-items: center;
-`;
+`
 
 export const NavItem = styled.a`
   padding: 20px;
@@ -20,4 +20,4 @@ export const NavItem = styled.a`
     background-color: #fff;
     color: #222;
   }
-`;
+`

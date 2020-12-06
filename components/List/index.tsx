@@ -1,17 +1,17 @@
-import { IListItem } from 'interfaces';
-import { ListStyled } from './list.styles';
-import ListItem from 'components/list-item';
+import { IListItem } from 'interfaces'
+import { ListStyled } from './list.styles'
+import ListItem from 'components/list-item'
 
 interface IList {
-  items: IListItem[],
-};
+  items: IListItem[]
+}
 
 const List: React.FC<IList> = ({ items }) => (
   <ListStyled>
-    {items?.map(item => (
+    {items?.map((item) => (
       <ListItem {...item} key={item.id} />
     ))}
   </ListStyled>
-);
+)
 
-export default List;
+export default List
